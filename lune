@@ -1,0 +1,21 @@
+ncard = input(("введите номер карты "))
+sum1 = 0 
+sum2 = 0
+if len(ncard) == 16 and ncard.isdigit():
+    for i in range(0, len(ncard), 2):
+        n = int(ncard[i])
+        n = n * 2
+        if n > 9:
+            n = n - 9
+            sum1 += n
+        else:
+            sum1 += n
+    for i in range(1, len(ncard), 2):
+        n1 = int(ncard[i])
+        sum2 += n1
+    if (sum1 + sum2) % 10 == 0:
+        print('карта исправна')
+    else:
+        print('карта неисправна')
+else:
+    print('ошибка ввода')
